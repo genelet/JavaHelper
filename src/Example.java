@@ -1,6 +1,8 @@
 import com.genelet.helper.GeneHelp;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import org.kohsuke.args4j.CmdLineException;
 
@@ -29,9 +31,20 @@ public class Example {
         /**
      * @param args the command line arguments
      * @throws java.sql.SQLException
+     * @throws java.io.FileNotFoundException
+     * @throws org.kohsuke.args4j.CmdLineException
      */
     public static void main(String[] args) throws SQLException, FileNotFoundException, IOException, CmdLineException {
         GeneHelp gh = new GeneHelp();
-        gh.run(args);
+        gh.parse(args);
+        
+        String dbname = gh.dbname;
+        String dbuser = gh.dbuser;
+        String dbpass = gh.dbpass;
+        
+        //Class.forName("com.mysql.jdbc.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbname, dbuser, dbpass);
+        gh.run(conn);
+        conn.close();
     }
 }
