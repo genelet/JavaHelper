@@ -24,7 +24,7 @@ The files generated will follow the structure:
                         > insert.html
                         > update.html
                         > delete.html
-                   table2
+                 > table2
                         > ...
      > www
          > index.html
