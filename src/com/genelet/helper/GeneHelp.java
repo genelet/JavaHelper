@@ -8,7 +8,6 @@ package com.genelet.helper;
 
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
@@ -27,11 +26,6 @@ import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
-
-/**
- *
- * @author Peter
- */
 
 public class GeneHelp {
     @Option(name="-force", usage="default false")
@@ -181,15 +175,17 @@ public class GeneHelp {
         }
     }
 
-    public void run(String[] args) throws FileNotFoundException, IOException, SQLException, CmdLineException {
+    public void parse(String[] args) throws CmdLineException  {
         CmdLineParser parser = new CmdLineParser(this);
-
         parser.parseArgument(args);
+        
         if( tables.isEmpty() ) {
             System.err.println("-dbname=\"\" -dbuser=\"\" -dbpass=\"\" [-root -project -script -force] tables ...");
             System.exit(1);
-        }
-        
+        }   
+    }
+    
+    public void run(Connection conn) throws FileNotFoundException, IOException, SQLException {
         dir_all();
         
         GeneConfig cnf = new GeneConfig(root, proj, scri);
@@ -203,10 +199,10 @@ public class GeneHelp {
         }
 
         if (chdir(root+"/src/java/"+proj)) { 
-            write_it(firstUpper(proj)+"Filter.go", cls.filter());
-            write_it(firstUpper(proj)+"Model.go", cls.model());
-            write_it(firstUpper(proj)+"Servlet.go", cls.servlet());
-            write_it(firstUpper(proj)+"Listener.go", cls.listener());
+            write_it(firstUpper(proj)+"Filter.java", cls.filter());
+            write_it(firstUpper(proj)+"Model.java", cls.model());
+            write_it(firstUpper(proj)+"Servlet.java", cls.servlet());
+            write_it(firstUpper(proj)+"Listener.java", cls.listener());
         }
         
         if (chdir(root+"/web/admin")) {
@@ -234,10 +230,6 @@ public class GeneHelp {
             write_it("startnew.html", ag.rolepublic());
         }
         
-            
-        //Class.forName("com.mysql.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbname, dbuser, dbpass);
-        
         int i=0;
         for (String t : tables) {
             List<Object> tmp = obj(conn, t);
@@ -248,11 +240,11 @@ public class GeneHelp {
 
             if (chdir(root+"/src/java/"+proj+"/"+t)) {
                 if (i==0) {
-                    write_it("Filter.go", cls.obj_filter(t, pk, nons, "\"groups\":{\"public\"}"));
+                    write_it("Filter.java", cls.obj_filter(t, pk, nons, "\"groups\", AL(\"public\")"));
                 } else {
-                    write_it("Filter.go", cls.obj_filter(t, pk, nons, ""));
+                    write_it("Filter.java", cls.obj_filter(t, pk, nons, ""));
                 }
-                write_it("Model.go", cls.obj_model(t, pk, ak, fields));
+                write_it("Model.java", cls.obj_model(t, pk, ak, fields));
             }
 
             if (chdir(root+"/web/admin/"+t)) {
@@ -272,7 +264,6 @@ public class GeneHelp {
                 write_it("edit.html",         ag.edit(t, pk, fields));
             }
         }
-        conn.close();
     } 
     
     static String nice(String name) {
