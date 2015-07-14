@@ -25,6 +25,7 @@ The files generated will follow the structure:
                         > update.html
                         > delete.html
                    table2
+                        > ...
      > www
          > index.html
          > init.js
@@ -38,6 +39,7 @@ The files generated will follow the structure:
                       > edit.html
                       > startnew.html
                > table2
+                      > ...
          > public
                 > header.html
                 > footer.html
@@ -54,4 +56,5 @@ The files generated will follow the structure:
                                > Filter.java
                                > Model.java
                         > table2
+                               > ...
 </pre>
