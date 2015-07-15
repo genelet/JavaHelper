@@ -48,7 +48,7 @@ The following files will be generated:
                       > startnew.html
                > table2
                       > ...
-         > public                           # the default partial file used in index.html is public/table1/startnew.html 
+         > public                           # the default used in index.html is public/table1/startnew.html 
                 > header.html
                 > footer.html
                 > table1
