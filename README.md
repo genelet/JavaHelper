@@ -36,7 +36,7 @@ The following files will be generated:
      > www                                  # AngularJS 
          > index.html                       # the single-URL index file  
          > init.js                          # global initial files for genelet.js
-         > (genelet.js)                     # download from github.com/tianzhen99/GeneletAngularJS/
+         > (genelet.js)                     # see: github.com/tianzhen99/GeneletAngularJS/
          > admin                            # partial files for role "admin"
                > login.html                 # admin's login
                > header.html                # admin's general header 
