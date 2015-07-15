@@ -19,29 +19,29 @@ The following files will be generated:
 > root
      > web
          > WEB-INF                          
-                 > web.xml                  # system configuration file
-                 > myproject.json           # Genelet configuration file
-         > admin                            # JSP files for role "admin"
-                 > login.en                 # admin's login
-                 > table1                   # admin's JSP files to component "table1"
-                        > dashboard.en      # JSP for http://SITE/myscript/admin/en/table1
-                        > topics.en         # JSP for http://SITE/myscript/admin/en/table1?action=topics
-                        > edit.en
+                 > web.xml              # system configuration file
+                 > myproject.json       # Genelet configuration file
+         > admin                        # JSP files for role "admin"
+                 > login.en             # admin's login
+                 > table1               # admin's JSP files to component "table1"
+                        > dashboard.en  # for http://SITE/myscript/admin/en/table1
+                        > topics.en     # for http://SITE/myscript/admin/en/table1?action=topics
+                        > edit.en       
                         > startnew.en
                         > insert.en
                         > update.en
                         > delete.en
-                 > table2                   # admin's JSP files to component "table2"
+                 > table2               # admin's JSP files to component "table2"
                         > ...
-     > www                                  # AngularJS 
-         > index.html                       # the single-URL index file  
-         > init.js                          # global initial files for genelet.js
-         > (genelet.js)                     # see: github.com/tianzhen99/GeneletAngularJS/
-         > admin                            # partial files for role "admin"
-               > login.html                 # admin's login
-               > header.html                # admin's general header 
-               > footer.html                # admin's general footer
-               > table1                     # admin's partial files to component "table1"
+     > www                              # AngularJS 
+         > index.html                   # the single-URL index file  
+         > init.js                      # global initial files for genelet.js
+         > (genelet.js)                 # see: github.com/tianzhen99/GeneletAngularJS/
+         > admin                        # partial files for role "admin"
+               > login.html             # admin's login
+               > header.html            # admin's general header 
+               > footer.html            # admin's general footer
+               > table1                 # admin's partial files to component "table1"
                       > dashboard.html
                       > topics.html
                       > edit.html
@@ -52,7 +52,7 @@ The following files will be generated:
                 > header.html
                 > footer.html
                 > table1
-                       > startnew.html      # the default partial file for index.html
+                       > startnew.html  # the default partial file for index.html
      > src
          > java
               > myproject                         # generated Java source files
