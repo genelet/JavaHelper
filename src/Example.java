@@ -28,7 +28,7 @@ import org.kohsuke.args4j.CmdLineException;
  * @author Peter
  */
 public class Example {
-        /**
+    /**
      * @param args the command line arguments
      * @throws java.sql.SQLException
      * @throws java.io.FileNotFoundException
