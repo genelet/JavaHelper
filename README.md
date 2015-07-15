@@ -8,11 +8,12 @@ Defaults:
 * -dbname, database name, mandatory
 * -dbuser, database user name
 * -dbpass, password of the database user
-* -root, directory where the generated files located, default to current directoy "." 
+* -root, top directory where the project files located, default to current directoy "." 
 * -project, name of package, default to "myproject", 
 * -script, script name in URL, default to "myscript"
+* -force, if set, force to override the existing files
 
-The files generated will follow the structure:
+The following files will be generated:
 
 <pre>
 > root
@@ -64,3 +65,5 @@ The files generated will follow the structure:
                         > table2
                                > ...
 </pre>
+
+Here i
