@@ -18,12 +18,12 @@ The following files will be generated:
 <pre>
 > root
      > web
-         > WEB-INF
-                 > web.xml
-                 > myproject.json
-         > admin
-                 > login.html
-                 > table1
+         > WEB-INF                          
+                 > web.xml                  # system configuration file
+                 > myproject.json           # Genelet configuration file
+         > admin                            # JSP files for role "admin"
+                 > login.html               # admin's login
+                 > table1                   # admin's JSP files to component "table1"
                         > dashboard.html
                         > topics.html
                         > edit.html
@@ -31,39 +31,40 @@ The following files will be generated:
                         > insert.html
                         > update.html
                         > delete.html
-                 > table2
+                 > table2                   # admin's JSP files to component "table2"
                         > ...
-     > www
-         > index.html
-         > init.js
-         > admin
-               > login.html
-               > header.html
-               > footer.html
-               > table1
+     > www                                  # AngularJS 
+         > index.html                       # the single-URL index file  
+         > init.js                          # global initial files for genelet.html
+         > (genelet.html)                   # downloaded from http://gitbub.com/tianzhen99/GeneletAngularJS/
+         > admin                            # partial files for role "admin"
+               > login.html                 # admin's login
+               > header.html                # admin's general header 
+               > footer.html                # admin's general footer
+               > table1                     # admin's partial files to component "table1"
                       > dashboard.html
                       > topics.html
                       > edit.html
                       > startnew.html
                > table2
                       > ...
-         > public
+         > public                           # the default partial file used in index.html is public/table1/startnew.html 
                 > header.html
                 > footer.html
                 > table1
                        > startnew.html
      > src
          > java
-              > myproject
-                        > MyprojectFilter.java
-                        > MyprojectModel.java
-                        > MyprojectServlet.java
-                        > MyprojectListener.java
-                        > table1
-                               > Filter.java
-                               > Model.java
+              > myproject                         # generated Java source files
+                        > MyprojectFilter.java    # system Filter class
+                        > MyprojectModel.java     # system Model class
+                        > MyprojectServlet.java   # project's servlet 
+                        > MyprojectListener.java  # project's listener class
+                        > table1                  # package for component "table1"
+                               > Filter.java      # component's Filter class
+                               > Model.java       # component's Model class
                         > table2
                                > ...
 </pre>
 
-Here i
+
