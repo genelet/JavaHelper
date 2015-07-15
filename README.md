@@ -22,15 +22,15 @@ The following files will be generated:
                  > web.xml                  # system configuration file
                  > myproject.json           # Genelet configuration file
          > admin                            # JSP files for role "admin"
-                 > login.html               # admin's login
+                 > login.en                 # admin's login
                  > table1                   # admin's JSP files to component "table1"
-                        > dashboard.html
-                        > topics.html
-                        > edit.html
-                        > startnew.html
-                        > insert.html
-                        > update.html
-                        > delete.html
+                        > dashboard.en      # JSP for http://SITE/myscript/admin/en/table1
+                        > topics.en         # JSP for http://SITE/myscript/admin/en/table1?action=topics
+                        > edit.en
+                        > startnew.en
+                        > insert.en
+                        > update.en
+                        > delete.en
                  > table2                   # admin's JSP files to component "table2"
                         > ...
      > www                                  # AngularJS 
