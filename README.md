@@ -24,8 +24,8 @@ The following files will be generated:
          > admin                        # JSP files for role "admin"
                  > login.en             # admin's login
                  > table1               # admin's JSP files to component "table1"
-                        > dashboard.en  # for http://SITE/myscript/admin/en/table1
-                        > topics.en     # for http://SITE/myscript/admin/en/table1?action=topics
+                        > dashboard.en  # http://SITE/myscript/admin/en/table1
+                        > topics.en     # http://SITE/myscript/admin/en/table1?action=topics
                         > edit.en       
                         > startnew.en
                         > insert.en
