@@ -2,12 +2,15 @@
 
 Run this program under a command line and generate a skeleton of your initial Genelet Java project.
 
-<sub>*program -dbname="Database_Name" -dbuser="Database_User" -dbpass="Database_Password" [-root="ROOT_DIRECTORY"] [-project="PROJECT_NAME"] [-script="SCRIPT_NAME"] [-force] table1 table2 ...*</sub>
+<sub>*program -dbname="" -dbuser="" -dbpass="" [-root=""] [-project=""] [-script=""] [-force] table1 table2 ...*</sub>
 
 Defaults:  
-* -root    = "." , current directoy 
-* -project = "myproject", 
-* -script  = "myscript"
+* -dbname, database name, mandatory
+* -dbuser, database user name
+* -dbpass, password of the database user
+* -root, directory where the generated files located, default to current directoy "." 
+* -project, name of package, default to "myproject", 
+* -script, script name in URL, default to "myscript"
 
 The files generated will follow the structure:
 
